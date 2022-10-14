@@ -1,0 +1,98 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in or register</title>
+    <link rel="stylesheet" href="./styles/dist.css" />
+  </head>
+  <body>
+    <header class="bg-sky-600 py-3.5">
+      <div class="container flex-col lg:flex-row flex items-center justify-between text-gray-100">
+        <div class="text-xl drop-shadow-lg mb-6 lg:mb-0">Social Media</div>
+        <form id="signin-form" class="flex gap-3 items-center flex-col lg:flex-row !mb-0">
+          <input
+            placeholder="Email"
+            class="form-input text-gray-800"
+            name="email"
+            type="email"
+            required
+          />
+          <input
+            placeholder="Password"
+            class="form-input text-gray-800"
+            name="password"
+            type="password"
+            required
+          />
+
+          <button class="btn !bg-sky-800" type="submit">Sign in</button>
+        </form>
+      </div>
+    </header>
+
+    <!-- SIGN UP -->
+    <main>
+      <div class="container mt-16">
+        <div class="w-full md:w-[70%] lg:w-[50%] rounded-md shadow p-8 mx-auto bg-white">
+          <h1 class="text-xl mb-4 font-semibold">Not a member? Join now for free</h1>
+
+          <form id="register-form" class="space-y-4">
+            <div class="form-el">
+              <label for="name">Name</label>
+              <input name="name" di="name" class="form-input" required />
+            </div>
+            <div class="form-el">
+              <label for="email">Email</label>
+              <input name="email" id="email" type="email" class="form-input" required />
+            </div>
+            <div class="form-el">
+              <label for="password">Password</label>
+              <input name="password" id="password" type="password" class="form-input" required />
+            </div>
+            <div class="form-el">
+              <label for="confirm_password">Confirm Password</label>
+              <input
+                name="confirm_password"
+                id="confirm_password"
+                type="password"
+                class="form-input"
+                required
+              />
+            </div>
+            <div class="form-el">
+              <label for="avatar">Avatar URL</label>
+              <input name="avatar" id="avatar" type="email" class="form-input" />
+            </div>
+            <div class="form-el">
+              <label for="banner">Banner URL</label>
+              <input name="banner" id="banner" type="email" class="form-input" />
+            </div>
+
+            <button class="btn" type="submit">Register</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <div
+      class="max-w-[500px] gap-2 flex justify-between items-start fixed right-6 bottom-6 bg-red-500 text-gray-100 rounded-md p-4"
+      id="error-toast"
+      style="display: none"
+    >
+      <span id="error-msg"></span>
+      <svg
+        id="error-close-btn"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6 cursor-pointer"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </div>
+    <script src="./scripts/signin.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users</title>
+    <link href="./styles/dist.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- LOADER FULL -->
+    <div
+      id="full-loader"
+      class="w-screen h-screen bg-white fixed top-0 left-0 z-50 flex items-center justify-center"
+    >
+      <svg
+        class="w-48 h-48 fill-gray-300 animate-spin"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+      >
+        <path fill="none" d="M0 0h24v24H0z" />
+        <path d="M12 3a9 9 0 0 1 9 9h-2a7 7 0 0 0-7-7V3z" />
+      </svg>
+    </div>
+
+    <header class="bg-sky-600 py-3.5">
+      <div class="container flex items-center justify-between text-gray-100">
+        <!-- LOGO -->
+        <div class="drop-shadow-lg flex items-center flex-col lg:flex-row w-full gap-10">
+          <div class="text-xl">Social Media</div>
+          <nav class="flex items-center gap-4 flex-col lg:flex-row">
+            <a class="hover:underline" href="./index.html">Home</a>
+            <a class="hover:underline" href="./users.html">Users</a>
+            <a class="hover:underline" href="./profile.html">Profile</a>
+            <a class="hover:underline inline-block lg:hidden" href="./signout.html">Sign out</a>
+          </nav>
+        </div>
+
+        <!-- USER DROPDOWN -->
+        <div class="relative group hidden lg:block text-gray-800">
+          <div
+            class="bg-white rounded-md btn text-gray-800 font-semibold"
+            id="header-username"
+          ></div>
+
+          <div
+            class="hidden p-1 overflow-hidden group-hover:block min-w-[150px] absolute top-full right-0 bg-white shadow-xl rounded-md"
+          >
+            <span
+              class="px-3 py-1 block cursor-pointer rounded-md hover:bg-gray-100 w-full"
+              id="signout"
+            >
+              Sign out
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container py-12">
+      <!-- ALL USERS -->
+      <div id="all-users" class="mx-auto w-full md:w-[70%] lg:w-[50%] space-y-4"></div>
+    </main>
+
+    <!-- ERROR MESSAGE -->
+    <div
+      class="max-w-[500px] gap-2 flex justify-between items-start fixed right-6 bottom-6 bg-red-500 text-gray-100 rounded-md p-4"
+      id="error-toast"
+      style="display: none"
+    >
+      <span id="error-msg"></span>
+      <svg
+        id="error-close-btn"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6 cursor-pointer"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </div>
+    <script src="./scripts/users.js" type="module"></script>
+  </body>
+</html>
