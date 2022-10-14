@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  body {
+    @apply bg-gray-100;
+  }
+
+  button,
+  input,
+  textarea {
+    @apply !rounded-md;
+  }
+
+  input,
+  textarea {
+    @apply !border-gray-300;
+  }
+
+  .form-el {
+    @apply flex flex-col gap-1.5;
+  }
+
+  .btn {
+    @apply bg-sky-600 text-white px-8 py-2 transition hover:brightness-110 active:brightness-95;
+  }
+}
+
+body {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+/*
+  start tailwind development (cmd)
+  npx tailwindcss -i ./styles/tailwind.css -o ./styles/dist.css --watch
+*/
