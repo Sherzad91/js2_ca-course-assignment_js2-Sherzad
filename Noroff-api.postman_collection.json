@@ -1,0 +1,564 @@
+{
+	"info": {
+		"_postman_id": "9cad9573-5413-4295-b2d3-a124adbbcd24",
+		"name": "Noroff-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19757373"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"SheHas77920@stud.noroff.no\",\r\n    \"password\": \"sh12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{DOMAIN}}/api/v1/social/auth/login",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"social",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sherzad\",\r\n    \"email\": \"SheHas77920@stud.noroff.no\",\r\n    \"password\": \"sh12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{DOMAIN}}/api/v1/social/auth/register",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"social",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Sherzad First Post\",\r\n  \"body\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, whe\",\r\n  \"tags\": [\r\n    \"fun\",\"Education\",\"Norway\"\r\n  ],\r\n  \"media\": \"https://facebook.com/sherzad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{DOMAIN}}/api/v1/social/posts",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"social",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DOMAIN}}/api/v1/social/posts?_author=true",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"social",
+								"posts"
+							],
+							"query": [
+								{
+									"key": "_reactions",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "_author",
+									"value": "true"
+								},
+								{
+									"key": "_comments",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "created",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "asc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{DOMAIN}}/api/v1/social/posts/481",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"social",
+								"posts",
+								"481"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Sherzad Seconde Post\",\r\n  \"body\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, whe\",\r\n  \"tags\": [\r\n    \"fun\",\"Education\",\"Norway\"\r\n  ],\r\n  \"media\": \"https://facebook.com/sherzad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{DOMAIN}}/api/v1/social/posts/523",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"social",
+								"posts",
+								"523"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Write Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"body\": \"Hello again\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{DOMAIN}}/api/v1/social/posts/523/comment",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"social",
+								"posts",
+								"523",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "React",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{DOMAIN}}/api/v1/social/posts/523/react/👍",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"social",
+								"posts",
+								"523",
+								"react",
+								"👍"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DOMAIN}}/api/v1/social/posts/523?_reactions=true&_author=true&_comments=true",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"social",
+								"posts",
+								"523"
+							],
+							"query": [
+								{
+									"key": "_reactions",
+									"value": "true"
+								},
+								{
+									"key": "_author",
+									"value": "true"
+								},
+								{
+									"key": "_comments",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "All Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DOMAIN}}/api/v1/social/profiles",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"social",
+								"profiles"
+							],
+							"query": [
+								{
+									"key": "_followers",
+									"value": "true",
+									"description": "followersy lagal be yan n a",
+									"disabled": true
+								},
+								{
+									"key": "_following",
+									"value": "true",
+									"description": "followingy lagal be yan n a",
+									"disabled": true
+								},
+								{
+									"key": "_posts",
+									"value": "true",
+									"description": "posty lagal be yan n a",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"description": "limit krdny dataka bo hatnawa",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "2",
+									"description": "la kwewa dast pe aka",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "email",
+									"description": "[name , email , filedakan ...]",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "asc",
+									"description": "[desc , asc]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DOMAIN}}/api/v1/social/profiles/jan?_followers=true&_following=true&_posts=true",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"social",
+								"profiles",
+								"jan"
+							],
+							"query": [
+								{
+									"key": "_followers",
+									"value": "true"
+								},
+								{
+									"key": "_following",
+									"value": "true"
+								},
+								{
+									"key": "_posts",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Follow",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{DOMAIN}}/api/v1/social/profiles/jan/follow",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"social",
+								"profiles",
+								"jan",
+								"follow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unfollow",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{DOMAIN}}/api/v1/social/profiles/jan/unfollow",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"social",
+								"profiles",
+								"jan",
+								"unfollow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update My Profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"banner\":\"https://www.netonnet.no/files/Info/guide-gaming/NetOnNet-gaming.jpg\",\r\n    \"avatar\":\"https://media.tenor.com/Lvhj4QVL8-4AAAAC/server-is-for-javascript.gif\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{DOMAIN}}/api/v1/social/profiles/Sherzad/media",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"social",
+								"profiles",
+								"Sherzad",
+								"media"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Check API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/status",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjkxLCJuYW1lIjoiU2hlcnphZCIsImVtYWlsIjoiU2hlSGFzNzc5MjBAc3R1ZC5ub3JvZmYubm8iLCJhdmF0YXIiOm51bGwsImJhbm5lciI6bnVsbCwiaWF0IjoxNjY0ODMwMTg5fQ.bD19mfelCIsf2SDUL4h5HM2EEwT4FMV3Zj_-sZRlpCU",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "DOMAIN",
+			"value": "https://nf-api.onrender.com",
+			"type": "string"
+		}
+	]
+}
