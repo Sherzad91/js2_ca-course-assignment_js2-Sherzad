@@ -59,7 +59,7 @@ export async function postCreatePost(body) {
 
 export async function getSinglePost(id) {
   try {
-    const res = await fetch(`${API_URL}/social/posts/${id}?_author=true&_comments=true`, {
+    const res = await fetch(`${API_URL}/social/posts/${id}?_author=true&_comments=true&_reactions=true`, {
       headers: REQUEST_HEADERS,
       method: 'GET',
     });
